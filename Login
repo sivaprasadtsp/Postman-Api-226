@@ -1,0 +1,44 @@
+package base;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+public class Loginpage {
+	
+	
+	
+	@FindBy(id="username")
+	WebElement email;
+	
+	@FindBy(id="password")
+	WebElement password;
+	
+	@FindBy(xpath="//li[@id='Registration Desk']")
+	WebElement inpatient;
+	
+	@FindBy(xpath="//input[@type = 'submit']")
+	WebElement loginbtn;
+	
+	
+	
+	
+	public Loginpage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+		
+		
+	}
+	
+	public void user_login()
+	{
+		
+		email.sendKeys("admin");
+		password.sendKeys("Admin123");
+		inpatient.click();
+		loginbtn.click();
+	}
+	
+	
+	
+
+	
+}
